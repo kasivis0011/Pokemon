@@ -4,13 +4,12 @@ async function fetchPokemon() {
     const data = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=10`);
     const pokemons = await data.json();
     pokemons.results.forEach((pokemon) => createPokemon(pokemon));
-    // pokemons.results.forEach((pokemon) => console.log(pokemon));
   } catch (err) {
     console.log(err);
   }
 }
 
-async function getAbility(url) {
+async function fetchAbility(url) {
   try {
     const data = await fetch(url);
     const detail = await data.json();
@@ -28,11 +27,11 @@ async function getAbility(url) {
   }
 }
 
-async function fetchweight(url) {
+async function fecthWeight(url) {
   try {
     const data = await fetch(url);
     const detail = await data.json();
-    console.log(detail.weight);
+    return detail.weight;
   } catch (err) {
     console.log(err);
   }
@@ -42,13 +41,19 @@ function createPokemon({ name, url }) {
   //console.log(name);\
   const ability = [];
   try {
-    getAbility(url).then((result) =>
+    fetchAbility(url).then((result) =>
       result.forEach((ele) => ability.push(ele))
     );
   } catch (err) {
     console.log(err);
   }
-  const weight = fetchweight(url);
+  try {
+    const weight = fecthWeight(url);
+    console.log(weight);
+  } catch (err) {
+    console.log(err);
+  }
+
   const info = document.createElement("div");
   info.setAttribute("class", "container");
 
