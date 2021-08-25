@@ -52,12 +52,9 @@ function createPokemon({ name, url }) {
   } catch (err) {
     console.log(err);
   }
-  try {
-    const weight = fecthWeight(url);
-    console.log(weight);
-  } catch (err) {
-    console.log(err);
-  }
+
+  const weight = fecthWeight(url);
+  console.log(weight);
 
   const info = document.createElement("div");
   info.setAttribute("class", "container");
