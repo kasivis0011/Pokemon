@@ -1,0 +1,30 @@
+:root {
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@300&display=swap");
+  font-family: "Poppins", sans-serif;
+  font-family: "Open Sans", sans-serif;
+}
+
+.main-container {
+  margin: 10px;
+  /* border-style: solid;
+  border-color: rgb(43, 41, 40); */
+  background: white;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+body {
+  background-image: linear-gradient(
+    to right top,
+    #c88216,
+    #e26e3a,
+    #ee5c61,
+    #eb5589,
+    #d65db1
+  );
+}

@@ -10,9 +10,10 @@
 fetchPokemon();
 async function fetchPokemon() {
   try {
-    const data = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=1`);
+    const data = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=10`);
     const pokemons = await data.json();
     pokemons.results.forEach((pokemon) => createPokemon(pokemon));
+    // pokemons.results.forEach((pokemon) => console.log(pokemon));
   } catch (err) {
     console.log(err);
   }
@@ -26,6 +27,7 @@ async function getDetails(url) {
     const Abil = [];
     detail.abilities.forEach((ele) => Abil.push(ele.ability.name));
     return Abil;
+    //console.log(Abil);
     //.then((det) => console.log(det.moves));
     //.then((det) => console.log(det.name, det.weight));
     // const Abil = detail.abilities.forEach((ele) => ele.ability.name);
@@ -37,7 +39,19 @@ async function getDetails(url) {
 
 function createPokemon({ name, url }) {
   //console.log(name);\
-  const ability = getDetails(url);
+  const ability = [];
+  let abilstring = "";
+  try {
+    getDetails(url).then((result) =>
+      result.forEach((ele) => ability.push(ele))
+    );
+    abilstring = ability.toString();
+    console.log(abilstring);
+  } catch (err) {
+    console.log(err);
+  }
+
+  //console.log(ability);
   const info = document.createElement("div");
   info.setAttribute("class", "container");
 
@@ -47,8 +61,8 @@ function createPokemon({ name, url }) {
 
   
   <div class="details">
-    <h3>${name}</h3>
-    <p><b>Ability:</b>${ability}</p>
+    <h3>Name: ${name}</h3>
+    <p><b>Ability:</b>${abilstring}</p>
     <p><b>Moves:</b></p>
     <p><b>Weight:</b></p>
     </div>
