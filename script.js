@@ -1,4 +1,6 @@
 fetchPokemon();
+
+//function to fetch the data from the api
 async function fetchPokemon() {
   try {
     const data = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=10`);
@@ -9,6 +11,7 @@ async function fetchPokemon() {
   }
 }
 
+//fucntion to fetch Ability from the url obtained from api
 async function fetchAbility(url) {
   try {
     const data = await fetch(url);
@@ -27,6 +30,7 @@ async function fetchAbility(url) {
   }
 }
 
+//fucntion to fetch Weight from the url obtained from api
 async function fecthWeight(url) {
   try {
     const data = await fetch(url);
@@ -37,6 +41,7 @@ async function fecthWeight(url) {
   }
 }
 
+//creating layout
 function createPokemon({ name, url }) {
   //console.log(name);\
   const ability = [];
