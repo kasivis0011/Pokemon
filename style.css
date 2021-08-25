@@ -5,12 +5,11 @@
 }
 
 .main-container {
-  margin: 10px;
+  margin: 20px;
   /* border-style: solid;
   border-color: rgb(43, 41, 40); */
   background: white;
   padding: 10px;
-  margin: 10px;
   border-radius: 10px;
   display: flex;
   gap: 16px;
@@ -18,13 +17,26 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+.main-container:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+  background-color: crimson;
+  color: white;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
 body {
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to right top,
     #c88216,
     #e26e3a,
     #ee5c61,
     #eb5589,
     #d65db1
-  );
+  ); */
+  background: rgba(249, 145, 134, 1) 38%;
+}
+
+h2 {
+  text-transform: capitalize;
 }

@@ -61,10 +61,10 @@ function createPokemon({ name, url }) {
 
   
   <div class="details">
-    <h3>Name: ${name}</h3>
-    <p><b>Ability:</b>${abilstring}</p>
-    <p><b>Moves:</b></p>
+    <h2>Name: ${name}</h2>
     <p><b>Weight:</b></p>
+    <p><b>Moves:</b></p>  
+    <p><b>Ability:</b>${abilstring}</p>
     </div>
   </div>
 `;
